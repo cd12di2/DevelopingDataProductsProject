@@ -22,7 +22,7 @@ nearest_stars = c("Alpha Centauri A",
                   "HD 196761")
 nearest_star_distances = c(4.37,11.9,19.8,19.9,39.9,41.3,42.1,42.7,46.9,46.9)
 nearest_star_temperatures = c(5790,5344,5388,5604,5257,5432,5538,5610,5662,5415)
-planets = c("Small Rocky Planets","Four Earth Size","Three Super Earths","Non Detected","No Data","Non Detected","Possible Companion Red Dwarf","Non Detected","Non Detected","Non Detected")
+planets = c("Small Rocky Planets","Four Earth Size","Three Super Earths","Non Detected","No Data","Non Detected","No Data","Non Detected","Non Detected","Non Detected")
 
 suntemp = 5778
 
@@ -110,11 +110,6 @@ getVelocities<-function(time,m,dm,v0,power) {
   
 }
   
-#mytime<-getTime(1,10,0.8,0,100)
-#vdata<-getVelocities(mytime,10,0.8,0,100)
-#print(vdata)
-
-
 # Define UI for application that draws a histogram
 ui <- fluidPage(
    
