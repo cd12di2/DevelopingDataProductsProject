@@ -8,12 +8,8 @@
 
 The Solar Type application is written in R for implementation
 in Shiny.  The app allows users to select one of the ten nearest
-Solar Types or Solar Analogs to our sun and displays some of its 
-properties.  Solar Types and Solar Analogs are two categories of
-stars that have similarities to the sun, with Solar Analogs being 
-more closely matched.  Solar Twins, even more closely matched to 
-our sun, are further away than the Solar Types and Analogs listed 
-in the app and are not included.
+Solar Types to our sun and displays some of its properties.  Solar 
+Types are stars that have similarities to the sun.
 
 When a star is selected by the user, its distance from the sun is 
 displayed along with some current information about its potential 
