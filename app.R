@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(shinyalert)
 
 
 nearest_stars = c("Alpha Centauri A",
@@ -112,7 +113,9 @@ getVelocities<-function(time,m,dm,v0,power) {
   
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-   
+
+  useShinyalert(),  
+  
   tags$head(
     tags$style(HTML("hr {border-top: 1px solid #000000;}"))
   ),
@@ -133,7 +136,8 @@ ui <- fluidPage(
       sliderInput("Propellant","Propellant Fraction of Total Mass",0.10,0.90,0.50),
       sliderInput("Vnot","Initial Ship Velocity (km/s)",0,100,5),
       sliderInput("Power","Engine Power (kW)",10,1000,50),
-      hr()
+      hr(),
+      actionButton("instructions","Click Here for Instructions")
     ),
     
     # Show a plot
@@ -184,8 +188,17 @@ server <- function(input, output) {
     vdata<-getVelocities(mytime,mym,mydm,myv0,mypower)
     #print(vdata)
     plot(x=vdata$times,y=vdata$velocities/3e8,xlab="Time (years)",ylab="Velocity (c)",main="Ship Speed",type="l",col="blue")
-})
+  })
   
+  observeEvent(input$instructions, {
+    shinyalert("Instructions","Select solar type from dropdown list\n
+               Adjust the mass of your ship\n
+               Adjust your ship's propellant ratio\n
+               Adjust your initial velocity\n
+               Adjust your ship's engine power\n
+               View your selected planet's black body radiation\n
+               View your ship's velocity over time",type="info")
+  })
   
 }
 
